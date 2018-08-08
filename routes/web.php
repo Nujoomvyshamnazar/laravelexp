@@ -39,13 +39,14 @@ Route::get('/post/{id}',function ($id)
   return "This id is ". $id;
 });
 
+// define name
 Route::get('admin/example',array('as'=>'admin.home',function ()
 {
    $url = route('admin.home');
   return "This URL is ".$url;
 }));
 
-
+// use middleware
 Route::group(['middleware' => ['web']], function () {
 
 });
