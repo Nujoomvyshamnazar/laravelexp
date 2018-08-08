@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/posts','PostController@index' );
+
 /*
 Route::get('/login', function () {
     return "This is login";

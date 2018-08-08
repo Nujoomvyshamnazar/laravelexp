@@ -20,3 +20,12 @@ php artisan storage:link
 
 //Route list
 php artisan route:list
+
+
+
+//Controller
+//To create a Controller
+php artisan make:controller PostController
+
+//To create Crud Template for post controller
+php artisan make:controller --resource PostController
