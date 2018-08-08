@@ -91,7 +91,10 @@ class PostController extends Controller
     // Contact
     public function contact()
     {
-        //
-          return view('contact');
+        // passing Single Value
+        //  return view('contact')->with('id',$id);
+        $people =["nujoom","ashinsa","ashique","jishnu"];
+        //passing multiple para
+        return view('contact',compact('people'));
     }
 }

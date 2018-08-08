@@ -29,3 +29,28 @@ php artisan make:controller PostController
 
 //To create Crud Template for post controller
 php artisan make:controller --resource PostController
+
+Migrations
+
+//To Migrate
+php artisan migrate
+
+//to create a migration file
+php artisan make:migration create_post_table --create="posts"
+
+//To Rollback
+php artisan migrate:rollback
+
+//To customise the existing table
+php artisan make:migration add_column_to_post --table="posts"
+
+// To delete all migrations
+php artisan migrate:reset
+
+// to refresh
+php artisan migrate:refresh
+
+// To know status
+php artisan migrate:status
+
+

@@ -11,19 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {  return view('welcome');});
 
 //assigning controller to router and method and passing data
 //Route::get('/posts/{id}','PostController@index' );
 
 // using Resource method to get crud features automatically
-Route::resource('post','PostController' );
+//Route::resource('post','PostController' );
 
 
 //Custom contact Routes
-Route::get('/contact','PostController@contact' );
+//Route::get('/contact','PostController@contact' );
 
 /*
 Route::get('/login', function () {
@@ -59,6 +57,52 @@ Route::get('admin/example',array('as'=>'admin.home',function ()
 // use middleware
 Route::group(['middleware' => ['web']], function () {
 
+});
+
+*/
+
+/*
+
+  Database Row Sql querys
+*/
+// using Raw query method insert data from Route
+/*
+// insert
+Route::get('/post/create', function () {
+  DB::insert('insert into posts(title,body,is_admin,image) values(?,?,?,?)',['this is title','this is body',1,'image.png']);
+});
+
+*/
+
+// select
+/*
+Route::get('/post/read', function () {
+$results=  DB::select('select *from  posts where id=?',[1]);
+return $results;
+*/
+/*
+foreach($results as $result)
+{
+echo $result->title;
+echo $result->body;
+
+});
+}*/
+
+// Update
+/*
+Route::get('/post/update', function () {
+$updated=  DB::update('update posts set title="thi is Nujoom da" where id=?',[1]);
+return $updated;
+});
+*/
+
+// Delete
+/*
+Route::get('post/delete',function()
+{
+  $delete=DB::delete('delete from posts where id=?',[1]);
+  return $delete;
 });
 
 */
