@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+/*
 Route::get('/login', function () {
     return "This is login";
 });
@@ -50,3 +50,5 @@ Route::get('admin/example',array('as'=>'admin.home',function ()
 Route::group(['middleware' => ['web']], function () {
 
 });
+
+*/
