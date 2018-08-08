@@ -15,7 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/posts/{id}','PostController@index' );
+//assigning controller to router and method and passing data
+//Route::get('/posts/{id}','PostController@index' );
+
+// using Resource method to get crud features automatically
+Route::resource('post','PostController' );
+
+
+//Custom contact Routes
+Route::get('/contact','PostController@contact' );
 
 /*
 Route::get('/login', function () {

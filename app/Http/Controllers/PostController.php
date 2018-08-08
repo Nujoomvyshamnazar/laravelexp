@@ -24,6 +24,7 @@ class PostController extends Controller
     public function create()
     {
         //
+          return "This is the method create ";
     }
 
     /**
@@ -35,6 +36,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         //
+          return "This is the method store ".$id;
     }
 
     /**
@@ -46,6 +48,7 @@ class PostController extends Controller
     public function show($id)
     {
         //
+        return "This is the method ".$id;
     }
 
     /**
@@ -57,6 +60,7 @@ class PostController extends Controller
     public function edit($id)
     {
         //
+        return "This is the method edit ".$id;
     }
 
     /**
@@ -69,6 +73,7 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
         //
+          return "This is the method update ".$id;
     }
 
     /**
@@ -80,5 +85,13 @@ class PostController extends Controller
     public function destroy($id)
     {
         //
+          return "This is the method destroy ".$id;
+    }
+
+    // Contact
+    public function contact()
+    {
+        //
+          return view('contact');
     }
 }
