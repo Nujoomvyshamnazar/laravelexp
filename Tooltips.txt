@@ -1,0 +1,22 @@
+Laravel 
+
+Install Via Composer
+composer global require "laravel/installer"
+
+// Install laravel
+laravel new blog
+
+// Deploy in local
+php artisan serve
+
+//Generate Application Key
+php artisan key:generate
+
+//run migration files
+php artisan migrate --seed
+
+//symlink 
+php artisan storage:link
+
+//Route list
+php artisan route:list
