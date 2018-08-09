@@ -1,5 +1,5 @@
 <?php
-
+use App\Post;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -106,3 +106,74 @@ Route::get('post/delete',function()
 });
 
 */
+
+/*
+
+ ORM
+
+*/
+// reading
+/*
+Route::get('/post/read', function () {
+$posts= Post::all();
+foreach($posts as $post)
+{
+return  $post->title;
+}
+});
+
+*/
+
+// find
+/*
+Route::get('/post/find/{id}', function ($id) {
+$post= Post::find($id);
+return $post->title;
+});
+*/
+
+// find with Condition
+/*
+Route::get('/post/findwhere/{id}', function ($id) {
+$post= Post::where('id',$id)->orderBy('id','desc')->take(1)->get();
+return $post;
+});
+
+*/
+
+// find with More Condition
+/*
+Route::get('/post/findmore/{id}', function ($id) {
+$post= Post::where('id','<',$id)->firstOrFail();
+return $post;
+});
+*/
+
+// insert
+/*
+Route::get('/post/basicinsert', function () {
+$post= new Post;
+$post->title="this is title";
+$post->body="this is the body";
+$post->image="image23.jpg";
+$post->save();
+});
+
+*/
+
+// Update
+/*
+Route::get('/post/update', function () {
+$post= Post::find(1);
+$post->title="this is title";
+$post->body="this is the body changed";
+$post->image="image23.jpg";
+$post->save();
+});
+
+*/
+
+// Insert Mass Assignment
+Route::get('/post/insertmass', function () {
+ Post::create(['title'=>'this is new title','body'=>'this is a body content','image'=>'image99.jpg']);
+});

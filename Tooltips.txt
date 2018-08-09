@@ -1,4 +1,4 @@
-Laravel 
+Laravel
 
 Install Via Composer
 composer global require "laravel/installer"
@@ -15,7 +15,7 @@ php artisan key:generate
 //run migration files
 php artisan migrate --seed
 
-//symlink 
+//symlink
 php artisan storage:link
 
 //Route list
@@ -53,4 +53,7 @@ php artisan migrate:refresh
 // To know status
 php artisan migrate:status
 
+Eloquent
 
+// To make a model
+php artisan make:model
