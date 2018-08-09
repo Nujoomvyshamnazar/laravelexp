@@ -174,6 +174,87 @@ $post->save();
 */
 
 // Insert Mass Assignment
+/*
 Route::get('/post/insertmass', function () {
  Post::create(['title'=>'this is new title','body'=>'this is a body content','image'=>'image99.jpg']);
 });
+*/
+
+// mass update method
+/*
+Route::get('/post/massupdate', function () {
+ Post::where('id',1)->where('is_admin',1)->update(['title'=>'this is updated title','body'=>'this is a updated body content','image'=>'image995444444444.jpg']);
+});
+*/
+
+// Delete
+/*
+Route::get('/post/delete', function () {
+ $post =Post::find(1);
+  $post->delete();
+});
+
+*/
+
+// Delete another method
+/*
+Route::get('/post/delete2', function () {
+Post::destroy(2);
+
+});
+
+*/
+
+// Deleting multiple records
+/*
+Route::get('/post/delete2', function () {
+Post::destroy([3,4,5]);
+// Post ::where('is_admin',0)->delete();
+
+});
+*/
+
+// Soft delete
+/*
+Route::get('/post/softdelete', function () {
+Post::find(6)->delete();
+});
+*/
+
+
+// read soft softdelete
+/*
+Route::get('/post/readsoftdelete', function () {
+//$post = Post::find(8);
+//return $post;
+//$post = Post::withTrashed()->where('id',6)->get();
+//return $post;
+//$post = Post::onlyTrashed()->where('id',7)->get();
+//return $post;
+
+});
+*/
+
+// restore Trashed
+/*
+Route::get('/post/restore', function () {
+Post::withTrashed()->where('id',6)->restore();
+});
+*/
+
+
+// force delete2 with trash data
+/*
+Route::get('/post/forcedelete', function () {
+Post::withTrashed()->where('id',6)->forceDelete();
+});
+
+*/
+
+// force delete only trash
+/*
+Route::get('/post/forcedeletetrashonly', function () {
+Post::onlyTrashed()->where('id',6)->forceDelete();
+});
+
+*/
